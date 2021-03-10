@@ -1,0 +1,90 @@
+/* Estilos gerais para todo o site da Unect */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Footer */
+
+.rodape {
+  background-color: #111111;
+  color: #fff;
+}
+
+.rodape-info {
+  padding: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.rodape-info ul:nth-child(2) li p {
+  color: #fff;
+  line-height: 1.4;
+}
+
+.rodape-info ul:nth-child(2) li {
+  margin: 20px 50px 0px 0px;
+}
+
+.rodape-info ul:nth-child(2) li span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.rodape-info ul:nth-child(3) li img {
+  margin: 20px 0px;
+}
+
+.info-contato li:nth-child(-n + 2):hover::after {
+  content: "";
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  height: 2px;
+  width: 120px;
+  background-color: #fff;
+}
+
+@media (max-width: 720px) {
+  .rodape-info {
+    flex-direction: column;
+    border: none;
+  }
+
+  #rodape-logo {
+    margin: 70px auto;
+  }
+
+  .info-contato li {
+    position: relative;
+    left: 25px;
+    margin-bottom: 30px;
+  }
+
+  .social-media {
+    display: flex;
+    margin: 70px 0px;
+  }
+
+  .social-media li a {
+    margin-right: 30px;
+  }
+}
+
+footer {
+  background-color: #111111;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 20px;
+  border-top: none;
+}
+
+footer span {
+  color: #fff;
+}

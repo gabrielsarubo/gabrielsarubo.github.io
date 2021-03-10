@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="22" viewBox="0 0 72 22">
+  <g id="menu-text" transform="translate(-278 -42)">
+    <text id="Menu" transform="translate(278 60)" fill="#333" font-size="18" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Menu</tspan></text>
+    <g id="menu-2" data-name="menu" transform="translate(-1)">
+      <rect id="Retângulo_165" data-name="Retângulo 165" width="20" height="2" transform="translate(331 58)" fill="#333"/>
+      <rect id="Retângulo_166" data-name="Retângulo 166" width="20" height="2" transform="translate(331 50)" fill="#333"/>
+    </g>
+  </g>
+</svg>
