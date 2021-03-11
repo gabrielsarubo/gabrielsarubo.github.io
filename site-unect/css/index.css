@@ -1,5 +1,10 @@
 /* Importando a fonte */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+  --brandBlue: #226ed8;
+  --brandGreen: #cfdd19;
+}
 
 /* Estilos gerais */
 *,
@@ -10,23 +15,65 @@ h3,
 p,
 span,
 button {
-  font-family: "Ubuntu", sans-serif;
-  color: #333333;
-}
-/* para fazerem os botoes pularem =) */
-button {
-  transition: all 0.3s ease 0s;
+  font-family: 'Ubuntu', sans-serif;
+  color: #111111;
 }
 
-button:hover {
-  transform: translateY(-5px);
+/* Estilos dos links */
+a.text-link {
+  font-weight: 500;
+  color: var(--brandBlue);
+}
+
+a.text-link:hover {
+  border-bottom: 2pt solid var(--brandBlue);
+}
+
+/* Call to actions */
+
+a.cta-primary {
+  display: inline-block;
+  transition: 200ms;
+  background-color: var(--brandBlue);
+  color: white;
+  padding: 18px 32px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+a.cta-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px 0px rgba(0, 0, 0, 0.10);
+}
+
+a.cta-primary-link {
+  font-size: 18px;
+  color: var(--brandBlue);
+  font-weight: 500;
+}
+
+a.cta-secondary {
+  display: inline-block;
+  transition: 200ms;
+  background-color: var(--brandGreen);
+  color: #333333;
+  padding: 15px;
+  border-radius: 4px;
+  font-weight: 500;
+  box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+a.cta-secondary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px 0px rgba(0, 0, 0, 0.08);
 }
 
 .intro,
 .diferenciais,
 .portfolio,
 .sobre,
-.servicos,
 .processo {
   overflow: hidden;
 }
@@ -53,6 +100,7 @@ button:hover {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: 99999999;
 }
 
 .fechar {
@@ -78,15 +126,6 @@ button:hover {
 #modal-mobile main ul li a {
   color: #fdfdfd;
   font-size: 27px;
-}
-
-#modal-mobile main ul li:first-child::after {
-  content: "";
-  display: block;
-  margin-top: 5px;
-  width: 75px;
-  height: 3px;
-  background-color: #fff;
 }
 
 #modal-footer {
@@ -127,13 +166,20 @@ header {
 }
 .menu li a {
   font-size: 18px;
+  margin-left: 10px;
+  padding: 14px;
   color: #333333;
-  margin-left: 30px;
-  text-decoration: none;
+  border-radius: 4px;
 }
+
+.menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .intro {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 100px;
 }
 
 .intro-bg {
@@ -141,11 +187,16 @@ header {
   background-size: cover;
 }
 
+.intro-conteudo {
+  margin-bottom: 64px;
+}
+
 .intro-conteudo h1 {
   padding: 60px 0px 20px 0px;
   font-size: 38px;
-  line-height: 1.4;
+  line-height: 1.3;
   max-width: 540px;
+  font-weight: 500;
 }
 
 .intro-conteudo span {
@@ -178,41 +229,12 @@ header {
 }
 
 .intro-info {
-  margin: 60px 0px 100px;
+  display: flex;
+  align-items: center;
 }
 
-.intro-info button {
-  position: relative;
-  font-size: 18px;
-  border: none;
-  padding: 18px 40px;
-  color: #fff;
-  text-transform: uppercase;
-  background-color: #226ed8;
-  border-radius: 4px;
-  margin-right: 10px;
-  transition: all 0.3s ease 0s;
-}
-
-.intro-info button:hover {
-  /* top: -4px; */
-  transform: translateY(-5px);
-}
-
-.intro-info span {
-  font-size: 18px;
-  color: #226ed8;
-  cursor: pointer;
-}
-
-.intro-info span:hover {
-  margin-right: 5px;
-}
-
-.intro-info img {
-  margin-left: 2px;
-  position: relative;
-  top: -2px;
+.intro-info a:first-child {
+  margin-right: 16px;
 }
 
 .intro-marcas p {
@@ -260,13 +282,6 @@ header {
 }
 
 @media (max-width: 900px) {
-  .intro-info button {
-    display: block;
-    margin-bottom: 10px;
-  }
-  .intro-info span {
-    margin-left: 30px;
-  }
 
   .intro-marcas ul {
     width: 280px;
@@ -310,32 +325,43 @@ header {
     flex-direction: column;
   }
 
+  .intro-conteudo {
+    margin-bottom: 20px;
+  }
+
   .intro-conteudo h1 {
     display: block;
-    width: 290px;
-    margin: 0px 0px 0px 0px;
-    padding: 20px 0px 0px 8%;
+    width: 95%;
+    margin: 0;
+    padding: 20px 0px 0px 10px;
     font-size: 30px;
   }
 
   .etiqueta {
-    margin: 20px 1px 40px 8%;
+    margin: 20px 1px 40px 10px;
     display: flex;
     justify-content: start;
   }
 
   .intro-info {
-    margin: 20px 0px;
-    text-align: center;
-  }
-
-  .intro-info button {
-    padding: 18px 55px;
-    margin: 20px auto;
+    /* 
+    CSS do 1366px
+    display: flex;
+    align-items: center; */
+    flex-direction: column;
   }
 
   .intro-marcas {
     padding: 10px 0px 60px;
+  }
+
+  .intro-info a {
+    margin-bottom: 20px;
+  }
+
+  .intro-info a:first-child {
+    padding-left: 3.8em;
+    padding-right: 3.8em;
   }
 
   .intro-marcas ul {
@@ -360,12 +386,12 @@ header {
 
 /* Serviços */
 .servicos {
-  padding: 60px 0px;
+  padding: 80px 0px;
 }
 
 .legenda {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   position: relative;
   left: 3px;
   color: rgba(51, 51, 51, 0.25);
@@ -381,17 +407,22 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 40px;
+}
+
+.servicos ul li {
+  padding-bottom: 40px;
 }
 
 .servicos ul li h3 {
   font-size: 22px;
-  color: #226ed8;
-  padding: 40px 0px 10px;
+  color: var(--brandBlue);
+  padding-bottom: 12px;
 }
 
 .servicos ul li span {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .servicos ul li span:nth-child(2)::after {
@@ -411,21 +442,7 @@ header {
   max-width: 260px;
   font-size: 16px;
   line-height: 1.5;
-  margin: 15px 0px;
-}
-
-.servicos button {
-  border: none;
-  border-radius: 4px;
-  background-color: #cfdd19;
-  padding: 15px 20px;
-  color: #333333;
-  font-weight: bold;
-  margin: 30px 0px;
-}
-
-.servicos button:hover {
-  top: -4px;
+  margin-top: 12px;
 }
 
 /* Responsivo Serviços */
@@ -437,7 +454,7 @@ header {
 
   .servicos h2 {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   .servicos ul {
@@ -473,7 +490,7 @@ header {
 .sobre h2 {
   font-size: 40px;
   line-height: 44px;
-  padding: 0px 0px 40px;
+  padding: 0px 0px 20px;
   position: relative;
   top: -10px;
 }
@@ -501,25 +518,6 @@ header {
   margin-bottom: 20px;
 }
 
-.conheca-mais {
-  margin: 40px 0px;
-}
-
-.conheca-mais a {
-  color: #226ed8;
-  text-decoration: none;
-  margin-right: 5px;
-}
-
-.conheca-mais a:hover {
-  padding-right: 5px;
-}
-
-.icone {
-  position: relative;
-  top: -1px;
-}
-
 @media (max-width: 1210px) {
   .sobre-img1 {
     display: none;
@@ -540,7 +538,7 @@ header {
 
   .sobre h2 {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 34px;
     padding: 5px 0px 20px;
   }
@@ -563,20 +561,6 @@ header {
   margin-bottom: 60px;
 }
 
-.diferenciais a {
-  color: #226ed8;
-}
-
-.diferenciais a:hover {
-  padding-right: 5px;
-}
-
-.seta {
-  position: relative;
-  top: -1px;
-  margin-left: 5px;
-}
-
 .diferenciais ul {
   display: flex;
   flex-wrap: wrap;
@@ -593,13 +577,13 @@ header {
 
 .diferenciais ul li h3 {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 500;
   color: #333333;
 }
 
 .diferenciais ul li p {
   width: 315px;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 10px 0px 0px;
 }
 
@@ -607,7 +591,7 @@ header {
   .diferenciais h2 {
     font-size: 26px;
     line-height: 36px;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 50px;
   }
 
@@ -657,9 +641,14 @@ header {
 
   border-radius: 4px;
   /* BACKGROUND URL de teste */
-  background: url("http://ekladata.com/meaG-fZ_-H9wd9-9Y60UcdhOUFw.jpg")
-    no-repeat;
+  background: url("http://ekladata.com/meaG-fZ_-H9wd9-9Y60UcdhOUFw.jpg") no-repeat;
   background-size: cover;
+
+  transition: 200ms;
+}
+
+.portfolio-cards-container .portfolio-card:hover {
+  transform: translateY(-5px);
 }
 
 /* titulo e tags de cada card */
@@ -675,25 +664,10 @@ header {
   color: white; /* redundante, title e tags tem isso repetido */
 }
 
-.ver-todos a {
-  text-decoration: none;
-  color: #226ed8;
-}
-
-.ver-todos a:hover {
-  margin: 0px 5px 0px;
-}
-
-.ver-todos img {
-  position: relative;
-  top: -1px;
-  padding-left: 3px;
-}
-
 @media (max-width: 720px) {
   .portfolio h2 {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 34px;
   }
 
@@ -718,6 +692,7 @@ header {
 
 .processo-info {
   overflow: auto;
+  margin-bottom: 40px;
 }
 
 .processo h2 {
@@ -745,7 +720,7 @@ header {
 
 .processo ul li h3 {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -754,163 +729,21 @@ header {
   line-height: 1.4;
 }
 
-.teste {
-  text-align: center;
-}
-
-.processo button {
-  border: none;
-  border-radius: 4px;
-  background-color: #cfdd19;
-  padding: 15px 20px;
-  color: #333333;
-  font-weight: bold;
-  margin: 60px 0px 0px;
-}
-
 @media (max-width: 720px) {
   .processo h2 {
     font-size: 26px;
-    font-weight: bold;
     line-height: 36px;
-  }
-
-  .teste {
-    text-align: left;
   }
 }
 
 /* Depoimentos */
 
-.depoimentos {
-  padding: 60px 0px;
-}
-
-.depoimentos h2 {
-  font-size: 40px;
-  margin-bottom: 60px;
-}
-
-.depoimentos-info {
-  display: flex;
-}
-
-.depoimentos-info img {
-  position: relative;
-  top: -25px;
-  left: 220px;
-}
-
-.depoimentos-info {
-  transition: transform 1s;
-}
-
-.depoimentos-info li {
-  display: none;
-  padding: 0px 40px 60px;
-  margin: 0px 60px 10px 0px;
-  background: transparent linear-gradient(224deg, #f5f5f5 0%, #e8e8e8 100%);
-  box-shadow: 0px 3px 6px #00000014;
-  border-radius: 3px;
-  opacity: 1;
-}
-
-.depoimentos-info li:last-child {
-  display: none;
-}
-
-.depoimentos-info li.mostrar {
-  display: block;
-}
-
-.depoimentos-info p {
-  width: 250px;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 20px 0px;
-}
-
-.depoimentos-info h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #226ed8;
-  padding: 20px 0px 5px;
-}
-
-.depoimentos-info span {
-  font-size: 16px;
-  color: #33333399;
-}
-
-.setas {
-  text-align: center;
-  padding: 40px 0px;
-}
-
-.setas img {
-  cursor: pointer;
-  margin-right: 40px;
-}
-
-.setas img:last-child:hover {
-  transform: translateX(5px);
-}
-
-@keyframes seta {
-  from {
-    right: 30px;
-  }
-  to {
-    right: 20px;
-  }
-}
-
-@media (max-width: 720px) {
-  .depoimentos-info {
-    overflow: auto;
-  }
-
-  .depoimentos h2 {
-    font-size: 26px;
-    font-weight: bold;
-    line-height: 36px;
-    margin-bottom: 40px;
-  }
-
-  .depoimentos-info li {
-    width: 320px;
-    margin: 0px 60px 0px 0px;
-    padding: 0px 30px 30px;
-  }
-
-  .depoimentos-info img {
-    top: 5px;
-  }
-
-  .depoimentos-info li.mostrarMobile {
-    display: block;
-  }
-
-  .depoimentos-info li p {
-    width: 262px;
-    font-size: 16px;
-  }
-
-  .setas img:nth-child(1) {
-    display: none;
-  }
-
-  .setas img {
-    position: absolute;
-    right: 0px;
-    animation: seta 0.4s ease-in 0s infinite alternate;
-  }
-}
+/* SECAO REMOVIDA */
 
 /* Orçamento */
 
 .orcamento {
-  padding: 60px 0px;
+  padding: 80px 0px;
   text-align: center;
   background-image: url(../assets/mosaicos/FundoBranco-7.png);
   background-size: cover;
@@ -919,7 +752,7 @@ header {
 
 .orcamento h2 {
   font-size: 33px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 30px;
 }
 
@@ -928,20 +761,11 @@ header {
   margin-bottom: 30px;
 }
 
-.orcamento button {
-  font-size: 18px;
-  border: none;
-  padding: 15px 30px;
-  color: #fff;
-  background-color: #226ed8;
-  border-radius: 4px;
-  margin-right: 10px;
-}
 
 @media (max-width: 720px) {
   .orcamento h2 {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 10px 0px 20px 0px;
   }
 
